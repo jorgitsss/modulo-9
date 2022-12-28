@@ -1,5 +1,5 @@
 require 'csv'
-puts 'Importing brands 8...'
+puts 'Importing 8 brands of sneakers'
 CSV.foreach(Rails.root.join('db/seeds/csv/brands.csv'), headers: true) do |row|
   Brand.create! do |brand|
     brand.id = row[0]
