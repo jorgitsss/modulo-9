@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>M09AE01</title>
+    <title>Proyecto M9</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,14 @@
   </head>
 
   <body>
-    <%= yield %>
+  <div>
+    <%= link_to "Home", root_path %>
+    <%= link_to "Brands", brands_path %>
+    <%= link_to "Products", products_path %>
+        <%= link_to "Articles", articles_path %>
+  </div>
+    <hr>
+  <%= yield %>
+    <hr>
   </body>
 </html>
