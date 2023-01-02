@@ -8,7 +8,7 @@ gem 'pg'
 gem 'faker'
 
 #  https://github.com/heartcombo/devise
-gem 'devise'
+gem 'devise', github: 'heartcombo/devise', branch: 'main'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
