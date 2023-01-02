@@ -7,6 +7,9 @@ gem 'pg'
 # A library for generating fake data such as names, addresses, and phone numbers.
 gem 'faker'
 
+#  https://github.com/heartcombo/devise
+gem 'devise'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 
