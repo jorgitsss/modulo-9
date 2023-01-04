@@ -29,6 +29,15 @@
     <%= form.label :description, style: "display: block" %>
     <%= form.text_area :description %>
   </div>
+    <div>
+    <%= form.label :brand_id, style: "display: block" %>
+    <%= form.collection_select :brand_id,
+        Brand.where(available: true),
+        :id,
+        :name,
+        required: true,
+        include_blank: true %>
+  </div>
   <div>
     <%= form.label :author, style: "display: block" %>
     <%= form.text_field :author %>

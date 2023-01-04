@@ -10,6 +10,10 @@ gem 'faker'
 #  https://github.com/heartcombo/devise
 gem 'devise', github: 'heartcombo/devise', branch: 'main'
 
+# Gemfile https://rubygems.org/gems/hirb/versions/0.7.3?locale=es   
+# dentro de rails c   >Hirb.enable  
+gem 'hirb'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 

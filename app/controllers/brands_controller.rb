@@ -65,6 +65,22 @@ class BrandsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def brand_params
-      params.require(:brand).permit(:name, :description, :brand_id, :status)
+      params.require(:brand).permit(:name, :description, :brand_id, :available)
     end
 end
+# 
+# create_table "brands", force: :cascade do |t|
+  # t.string "name"
+  # t.boolean "available"
+  # t.datetime "created_at", null: false
+  # t.datetime "updated_at", null: false
+# end
+# 
+# create_table "labels", force: :cascade do |t|
+  # t.string "title"
+  # t.text "description"
+  # t.boolean "available"
+  # t.datetime "created_at", null: false
+  # t.datetime "updated_at", null: false
+# end
+# 

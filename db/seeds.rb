@@ -10,6 +10,20 @@ CSV.foreach(Rails.root.join('db/seeds/csv/brands.csv'), headers: true) do |row|
 end
 puts '8 brands '
 
+require 'csv'
+puts 'Importing 8 labels of sneakers'
+CSV.foreach(Rails.root.join('db/seeds/csv/labels.csv'), headers: true) do |row|
+  Label.create! do |label|
+    label.id = row[0]
+    label.title = row[1]
+    label.description = row[2]
+    label.available = row[3]
+  end
+end
+puts '8 labels '
+
+
+
 puts 'Importing products 50...'
 a = %w[active inactive discontinued]
 100.times do
