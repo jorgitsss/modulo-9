@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  resources :labels
-  resources :references
-  resources :publications
   devise_for :users
+  resources :labels
+  resources :publications
   resources :products
   resources :brands
   resources :articles

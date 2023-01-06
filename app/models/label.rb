@@ -1,12 +1,12 @@
 class Label < ApplicationRecord
-  # belongs_to :publication
-  validates :title, presence: true
+  # validaciones
+  validates :name, presence: true
   validates :description, presence: true
   validates :available, inclusion: { in: [true, false] }
 
   # Associations
-  has_many :publications, dependent: :destroy
-
+  has_many :publication
+  
 end
 
 

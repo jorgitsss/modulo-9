@@ -10,23 +10,9 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.label :reference_id, style: "display: block" %>
-    <%= form.text_field :reference_id %>
-  </div>
-
-  <div>
+  <p><strong><%= form.label :name, style: "display: block" %></strong><%= form.text_field :name %></p>
+  <p><strong><%= form.label :description, style: "display: block" %></strong><%= form.text_area :description %></p>
+  <p><strong><%= form.label :available %></strong> <%= form.check_box :available %></p>
+  <hr>
     <%= form.submit %>
-  </div>
 <% end %>
