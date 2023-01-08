@@ -7,19 +7,16 @@
 * Generar el CRUD para publicaciones y etiquetas utilizando formularios anidados
 
 ### TRABAJO 2
-Tabla Publicaciones
-Tabla Etiquetas
-Tabla Usuarios
-
+![Tabla Publicaciones Tabla Etiquetas Tabla Usuarios](https://github.com/jorgitsss/modulo-9/blob/master/app/assets/images/2.jpg)
 * Finalizar DER con los campos necesarios
 * Generar el modelo, migracion y asociación para la tabla usuarios utilizando la gema devise
 * Generar una ruta anidada, don de ingresando al perfil del usuario se puedan ver las publicaciones relacionadas
 
 ### TRABAJO 3
-Tabla Publicaciones
+![Tabla Publicaciones
 Tabla Etiquetas
 Tabla Usuarios
-Tabla Tableros
+Tabla Tableros](https://github.com/jorgitsss/modulo-9/blob/master/app/assets/images/3.jpg)
 
 * Finalizar DER con los campos y tabla restantes
 * Generar los modelos, migraciones y asociasiones de las tablas nuevas para reflejar el esquema de la base de datos
