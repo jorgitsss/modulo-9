@@ -1,7 +1,6 @@
 # Individuales M9
 ### TRABAJO 1
-Tabla Publicaciones  - - Tabla Etiquetas
-
+![Tabla Publicaciones  - - Tabla Etiquetas](https://github.com/jorgitsss/modulo-9/blob/master/app/assets/images/1.jpg)
 * Finalizar DER con los campos necesarios
 * Generar modelos, migracion y tablas en un proyecto rails
 * asociar los modelos entre publicaciones y etiquetas
