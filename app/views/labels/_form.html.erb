@@ -2,7 +2,6 @@
   <% if label.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(label.errors.count, "error") %> prohibited this label from being saved:</h2>
-
       <ul>
         <% label.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -10,9 +9,18 @@
       </ul>
     </div>
   <% end %>
-  <p><strong><%= form.label :name, style: "display: block" %></strong><%= form.text_field :name %></p>
-  <p><strong><%= form.label :description, style: "display: block" %></strong><%= form.text_area :description %></p>
-  <p><strong><%= form.label :available %></strong> <%= form.check_box :available %></p>
+  <p>
+    <strong><%= form.label :name, style: "display: block" %></strong>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <strong><%= form.label :description, style: "display: block" %></strong>
+    <%= form.text_area :description %>
+  </p>
+  <p>
+    <strong><%= form.label :available %></strong>
+    <%= form.check_box :available %>
+  </p>
   <hr>
-    <%= form.submit %>
+  <%= form.submit "Save this Label", class: "btn btn-success", data: { disable_with: "Please wait..." } %>
 <% end %>

@@ -1,22 +1,12 @@
 <div id="<%= dom_id publication %>">
-  <p>
-    <strong>Title:</strong>
-    <%= publication.title %>
-  </p>
-
-  <p>
-    <strong>Author:</strong>
-    <%= publication.author %>
-  </p>
-
-  <p>
-    <strong>Desciption:</strong>
-    <%= publication.description %>
-  </p>
-
-  <p>
-    <strong><Label></Label>:</strong>
-    <%= publication.label_id %>
-  </p>
-
+<div><p><%= publication.id %></p></div>
+<div><p><strong>Name:</strong>       <%= publication.name %> </p></div>
+<div><p><strong>Author:</strong>     <%= publication.author %> </p></div>
+<div><p><strong>Desciption:</strong> <%= publication.description %></p></div>
+<div><p><strong>Label</strong>       
+<% publication.label_ids.each do |label_id| %>
+  <% label = Label.find(label_id) %>
+  [<%= label.name %>]
+<% end %></p></div>
+<div><p><strong>available</strong>      <%= publication.available %></p></div>
 </div>

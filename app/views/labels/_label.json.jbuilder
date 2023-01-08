@@ -1,2 +1,2 @@
-json.extract! label, :id, :title, :description, :reference_id, :created_at, :updated_at
+json.extract! label, :id, :name, :description, :available, :created_at, :updated_at
 json.url label_url(label, format: :json)

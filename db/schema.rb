@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_06_200000) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_07_221415) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -65,6 +65,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_06_200000) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "labels_publications", id: false, force: :cascade do |t|
+    t.integer "publication_id", null: false
+    t.integer "label_id", null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -80,10 +85,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_06_200000) do
     t.text "description"
     t.integer "label"
     t.string "author"
-    t.string "status"
+    t.string "available"
     t.integer "publication_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer "publication_id", null: false
+    t.integer "label_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["label_id"], name: "index_taggings_on_label_id"
+    t.index ["publication_id"], name: "index_taggings_on_publication_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -104,4 +118,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_06_200000) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "articles", "brands"
   add_foreign_key "products", "brands"
+  add_foreign_key "taggings", "labels"
+  add_foreign_key "taggings", "publications"
 end

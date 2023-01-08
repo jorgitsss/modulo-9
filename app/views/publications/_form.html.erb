@@ -1,23 +1,26 @@
-<%= form_with(model: publication) do |form| %>
+<%= form_with(model: publication, local: true) do |form| %>
   <% if publication.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(publication.errors.count, "error") %> 
-      prohibited this publication from being saved:</h2>
+    <div id="error_explanation" class="alert alert-danger" role="alert">
+      <h2><%= pluralize(publication.errors.count, "error") %> prohibited this publication from being saved:</h2>
       <ul>
-        <% publication.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
+      <% publication.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
       </ul>
     </div>
+    <hr>
   <% end %>
-
-  <p><strong><%= form.label :name, style: "display: block" %></strong><%= form.text_field :name %>  </p>
-  <p><strong><%= form.label :author, style: "display: block" %></strong><%= form.text_field :author %> </p>
-  <p><strong><%= form.label :description, style: "display: block" %></strong><%= form.text_area :description %> </p>
-  <p><strong><%= form.label :status %></strong> <%= form.check_box :status %></p>
-  <p><strong><%= form.label :labels %></strong> <%= form.collection_check_boxes :label, Label.all, :id, :name %></p>
+   <div><p><strong><%= form.label :name, style: "display: block" %></strong><%= form.text_field :name %> </p> </div>
+   <div><p><strong><%= form.label :author, style: "display: block" %></strong><%= form.text_field :author %>  </p> </div>
+   <div><p><strong><%= form.label :description, style: "display: block" %></strong><%= form.text_area :description %>  </p> </div>
+  <div>
+    <div><p><strong><%= form.label :available, style: "display: block" %></strong>
+    <%= form.check_box :available, {}, "true", " false" %>
   </div>
-  <hr>
-<%= form.submit %>
-  <% end %>
-
+  <div><strong>Labels tag </strong>
+  <%= form.collection_check_boxes :label_ids, Label.all, :id, :name %>
+  </div>
+  <div class="actions">
+    <%= form.submit "Create this Publication", class: "btn btn-success", data: { disable_with: "Please wait..." } %>
+  </div>
+<% end %>

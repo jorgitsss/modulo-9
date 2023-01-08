@@ -5,7 +5,7 @@ class CreatePublications < ActiveRecord::Migration[7.0]
       t.text :description
       t.integer :label
       t.string :author
-      t.string :status
+      t.string :available
       t.integer :publication_id
       t.timestamps
     end

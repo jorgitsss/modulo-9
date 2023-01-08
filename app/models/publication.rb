@@ -1,16 +1,18 @@
 class Publication < ApplicationRecord
-  attribute :status, :boolean, default: false
-
-  # Validations
+  # validaciones
   validates :name, presence: true
   validates :description, presence: true
-  validates :author, presence: true
-  validates :status, inclusion: { in: [true, false] }
-  validates :label, numericality: { only_integer: true, array: true }
+  # validates :author, presence: true
+  validates :available, presence: true
+  # validates :available, inclusion: { in: [true, false] }
+  validates :label_ids, presence: true
 
   # Associations
-  belongs_to :label
+  has_and_belongs_to_many :labels
 
+  # # belongs_to :label
+  # has_many :label
   # Enums
   ## Status
+  # enum status: { active: true, inactive: false }
 end

@@ -65,23 +65,6 @@ class LabelsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def label_params
-      params.require(:label).permit(:name, :description, :label_id, :available)
+      params.require(:label).permit(:name, :description, :available)
     end
 end
-
-# 
-# create_table "brands", force: :cascade do |t|
-# t.string "name"
-# t.boolean "available"
-# t.datetime "created_at", null: false
-# t.datetime "updated_at", null: false
-# end
-# 
-# create_table "labels", force: :cascade do |t|
-# t.string "title"
-# t.text "description"
-# t.boolean "available"
-# t.datetime "created_at", null: false
-# t.datetime "updated_at", null: false
-# end
-# 

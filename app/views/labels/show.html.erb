@@ -1,10 +1,10 @@
-<p style="color: green"><%= notice %></p>
-
+<h1>Show single label</h1>
+  <%= button_to "Destroy this label", @label, method: :delete, class:"btn btn-danger" %>
+<hr>
 <%= render @label %>
-
+<hr>
 <div>
-  <%= link_to "Edit this label", edit_label_path(@label) %> |
-  <%= link_to "Back to labels", labels_path %>
-
-  <%= button_to "Destroy this label", @label, method: :delete %>
+  <%= link_to "Edit this label", edit_label_path(@label), class:"btn btn-info" %> |
+  <%= link_to "Back to labels", labels_path, class:"btn btn-info" %>
+  <hr>
 </div>
